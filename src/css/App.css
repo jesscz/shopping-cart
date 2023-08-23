@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body{
+    font-family: 'Jost', sans-serif;
+}
 a{
     color: blue;
 }
 
 a:hover, button:hover{
-    text-decoration: underline;
+    font-style: italic;
 }
 
 #root > div {
@@ -17,13 +21,27 @@ a:hover, button:hover{
 }
 
 #root > div > div:first-child{ /* nav bar */
-    background-color: rgb(225, 225, 255);
+    background-color: #ffdd63;
     display: flex; 
     justify-content: space-between;
     align-items: center;
     height: min(20vh, 60px);
-
+    font-weight: 400;
+    color: white;
 }
 #root > div > div:nth-child(2){ /* non nav bar content */
     
 }
+
+.title:hover{
+    font-style: normal;
+}
+
+.cart-button{
+    filter: brightness(0) invert(1);
+}
+
+.homepage{
+    height: calc(100vh - (min(20vh, 60px)));
+}
+

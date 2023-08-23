@@ -7,7 +7,7 @@ function Navbar(){
     return (
         <div className="z-99 text-3xl w-full" >
             <div>
-                <button onClick={() => navigate("/")} className="justify-self-start ml-3">
+                <button onClick={() => navigate("/")} className="justify-self-start ml-5 italic title">
                 Fresh Foods
                 </button>
             </div>
@@ -21,7 +21,7 @@ function Navbar(){
             </div>
             <div>
                 <button onClick={() => navigate("/cart")} className="justify-self-end mr-3" >
-                    <img src={cart} className="h-[30px] min-w-[30px]"/>
+                    <img src={cart} className="h-[30px] min-w-[30px] cart-button"/>
                 </button>
             </div>
             
