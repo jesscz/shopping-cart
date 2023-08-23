@@ -1,21 +1,18 @@
-import React from 'react';
-import '../css/App.css'
 import productsList from '../components/products.jsx';
-import photo1 from '../assets/fruits/photo1.avif';
-
 
 function Shop(){
     productsList.map(i => {console.log(i.image)})
 
     return (
-        <div>
+        <div className='w-4/5 m-auto'>
             <h1>Peruse our fine food selection:</h1>
-            <div>
+            <div className='grid grid-cols-2'>
                 {productsList.map(product => 
                     <div className='border-solid border-2' key={product.name}>
-                        <span>{product.name}</span>
+                        <div>{product.name}</div>
                         <img src={product.image} />
-                        <span>{product.price}</span>
+                        <div>{product.price}</div>
+                        <button className='bg-sky-300 h-7 w-full'>Add to Cart</button>
                     </div>
                 )}
             </div>
