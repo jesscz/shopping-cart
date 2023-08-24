@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import productsList from '../components/products.jsx';
 
-function Shop({ addToCart }){
+export default function Shop({ addToCart }){
 
     return (
         <div className='w-4/5 m-auto'>
@@ -18,4 +19,7 @@ function Shop({ addToCart }){
         </div>
     )
 }
-export default Shop;
+
+Shop.propTypes = {
+    addToCart: PropTypes.func,
+}

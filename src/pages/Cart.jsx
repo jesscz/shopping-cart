@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import CartItem from "../components/CartItem";
 
-function Cart({ cart, cartItem }){
+export default function Cart({ cart, cartItem }){
     let display = [];
     for (const item in cart){
         display.push(<CartItem 
@@ -12,8 +13,12 @@ function Cart({ cart, cartItem }){
         <div>
             <div>Your Cart</div>
             <div>{display}</div>
+            <button>Checkout</button>
         </div>
     )
 }
 
-export default Cart;
+Cart.propTypes = {
+    cart: PropTypes.object,
+    cartItem: PropTypes.number,
+}

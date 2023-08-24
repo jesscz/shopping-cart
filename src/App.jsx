@@ -10,6 +10,7 @@ import './css/App.css'
 
 function App() {
   
+  
   const [cart, setCart] = useState({});
   const [cartItem, setCartItem] = useState(0); //number of unique items in the cart
   const [cartTotal, setCartTotal] = useState(0); //total number of items in the cart
@@ -65,5 +66,7 @@ function App() {
     </div>
   )
 }
+
+
 
 export default App

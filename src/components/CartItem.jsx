@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 // import productsList from '../components/products.jsx';
 
 export default function CartItem({ item, cart }){
@@ -8,4 +9,9 @@ export default function CartItem({ item, cart }){
             <img src={cart[item].image} />
         </div>
     )
+}
+
+CartItem.propTypes = {
+    cart: PropTypes.object,
+    item: PropTypes.object,
 }

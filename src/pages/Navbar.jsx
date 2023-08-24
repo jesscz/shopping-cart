@@ -1,8 +1,9 @@
 // import { useState } from 'react'
+import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 import cart from '../assets/shopping-bag.svg'
 
-function Navbar({ cartTotal }){
+ export default function Navbar({ cartTotal }){
     const navigate = useNavigate()
     return (
         <div className="z-99 text-3xl w-full" >
@@ -28,4 +29,7 @@ function Navbar({ cartTotal }){
         </div>
     )
 }
-export default Navbar;
+
+Navbar.propTypes = {
+    cartTotal: PropTypes.number, //going to be for numnber of items in cart badge
+}
