@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import cart from '../assets/shopping-bag.svg'
 
  export default function Navbar({ cartTotal }){
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     return (
         <div className="z-99 text-3xl w-full" >
             <div>
