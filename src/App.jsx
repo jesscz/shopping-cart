@@ -11,37 +11,45 @@ import './css/App.css'
 function App() {
   
   const [cart, setCart] = useState({});
+  const [cartItem, setCartItem] = useState(0); //number of unique items in the cart
+  const [cartTotal, setCartTotal] = useState(0); //total number of items in the cart
 
-  const productClick = (e) => {
+  const productClick = () => {
 
   }
 
-  const addToCart = (product) => { //add to cart in state 
+  const addToCart = (product, price, image) => { //add to cart in state 
       if (cart[product]){
-        setCart({
+        setCart((cart) => ({
           ...cart,
           [product]: {
             ...cart[product],
             numItems: cart[product].numItems + 1,
           }
-        })
+        }))
       }
       else{
-        setCart({
+        setCart((cart) => ({
           ...cart,
           [product]: {
             ...cart[product],
             numItems: 1,
+            price: price,
+            image: image,
+
           }
-        })
+        }))
+        setCartItem(cartItem => cartItem + 1);
       }
+      setCartTotal(cartTotal => cartTotal + 1);
   }
 
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
-        
+        <Navbar 
+          cartTotal={cartTotal}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop 
@@ -50,6 +58,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart 
             cart={cart}
+            cartItem={cartItem}
           />} />
         </Routes>
       </BrowserRouter>

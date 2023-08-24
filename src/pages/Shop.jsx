@@ -1,7 +1,6 @@
 import productsList from '../components/products.jsx';
 
 function Shop({ addToCart }){
-    // productsList.map(i => {console.log(i.image)})
 
     return (
         <div className='w-4/5 m-auto'>
@@ -12,7 +11,7 @@ function Shop({ addToCart }){
                         <div>{product.name}</div>
                         <img src={product.image} />
                         <div>{product.price}</div>
-                        <button onClick={() => addToCart(product.name)} className='bg-sky-300 h-7 w-full'>Add to Cart</button>
+                        <button onClick={() => addToCart(product.name, product.price, product.image)} className='bg-sky-300 h-7 w-full'>Add to Cart</button>
                     </div>
                 )}
             </div>
