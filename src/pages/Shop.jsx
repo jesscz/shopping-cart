@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 import productsList from '../components/products.jsx';
 
 export default function Shop({ addToCart }){
+    const navigate = useNavigate();
 
     return (
         <div className='w-4/5 m-auto'>
@@ -11,11 +11,9 @@ export default function Shop({ addToCart }){
             <div className='grid grid-cols-2'>
                 {productsList.map(product => 
                     <div className='border-solid border-2' key={product.name}>
-                        <Link to={`/shop/${product.name}`}>
-                            <div>{product.name}</div>
-                            <img src={product.image} />
-                        </Link>
-                        <div>{product.price}</div>
+                        <button onClick={() => navigate(`${product.name}`)}>{product.name}</button>
+                        <img src={product.image} onClick={() => navigate(`${product.name}`)}/>
+                        <div>${product.price}</div>
                         <button onClick={() => addToCart(product.name, product.price, product.image)} className='bg-sky-300 h-7 w-full'>Add to Cart</button>
                     </div>
                 )}
