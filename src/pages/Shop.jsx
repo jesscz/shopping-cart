@@ -11,8 +11,8 @@ export default function Shop({ addToCart }){
             <div className='grid grid-cols-2'>
                 {productsList.map(product => 
                     <div className='border-solid border-2' key={product.name}>
-                        <button onClick={() => navigate(`${product.name}`)}>{product.name}</button>
-                        <img src={product.image} onClick={() => navigate(`${product.name}`)}/>
+                        <button onClick={() => navigate(`${product.id}`)}>{product.name}</button>
+                        <img src={product.image} onClick={() => navigate(`${product.id}`)}/>
                         <div>${product.price}</div>
                         <button onClick={() => addToCart(product.name, product.price, product.image)} className='bg-sky-300 h-7 w-full'>Add to Cart</button>
                     </div>

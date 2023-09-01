@@ -1,15 +1,17 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import productsList from '../components/products.jsx';
 
-export default function Product(){
-  const { name } = useParams();
-  const productItem = productsList.find((prod) => prod.name === name)
+export default function Product({ addToCart }){
+  const { id } = useParams();
+  const product = productsList.find((prod) => prod.id === id)
 
   return (
     <div>
-      <h2>adsf{productItem.name}</h2>
-      <button className='bg-sky-300'>Add to Cart</button>
+      <h1>{product.name}</h1>
+      <div>${product.price}</div>
+      <img src={product.image} />
+      <div>About this product: {product.description}</div>
+      <button onClick={() => addToCart(product.name, product.price, product.image)} className='bg-sky-300'>Add to Cart</button>
     </div>
   )
 }
